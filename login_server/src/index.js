@@ -8,12 +8,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const authRoutes = require("./routes/auth");
+
 app.use(cors());
 
 // route
 app.use(bodyParser.json());
 
 app.use('/api', authRoutes);
+
 
 // Start Server
 app.listen(port, () => {

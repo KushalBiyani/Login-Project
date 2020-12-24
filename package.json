@@ -4,8 +4,13 @@
   "description": "login website with oauth ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "cd login_client && npm start",
+    "server": "cd login_server && npm start",
+    "start": "concurrently --kill-others \" npm run client\" \"npm run server\""
   },
   "author": "kushal",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
 }
