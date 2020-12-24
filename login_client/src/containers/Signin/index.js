@@ -4,6 +4,7 @@ import Input from '../../components//Input';
 import { login } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
 
 /**
 * @author
@@ -62,5 +63,20 @@ const Signin = (props) => {
     )
 
 }
+const mapStatetoProps = (state) => {
+    return {
+        email: state.user.email,
+        password: state.user.password,
+    }
+}
 
-export default Signin
+const mapDispatchtoProps = (dispatch) => {
+    return {
+        login: function (email, password) {
+            dispatch(login(email, password));
+        },
+
+    }
+}
+
+export default connect(mapStatetoProps, mapDispatchtoProps)(Signin);

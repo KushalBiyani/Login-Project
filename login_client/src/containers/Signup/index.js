@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { Container, Form, Row, Col, Button } from "react-bootstrap";
-import Input from "../../components/Input";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signup } from "../../actions";
 import { useEffect } from "react";
-
+import { Container, Form, Row, Col, Button } from 'react-bootstrap';
+import Input from '../../components//Input';
 /**
  * @author
  * @function Signup
  **/
+
 
 const Signup = (props) => {
     const [firstName, setFirstName] = useState("");
@@ -56,11 +56,8 @@ const Signup = (props) => {
     if (user.loading) {
         return <p>Loading...!</p>;
     }
-
     return (
-
         <Container>
-            {user.message}
             <Row style={{ marginTop: "50px" }}>
                 <Col md={{ span: 6, offset: 3 }}>
                     <Form onSubmit={userSignup}>
@@ -100,14 +97,14 @@ const Signup = (props) => {
                             type="password"
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <Col md={6}>
-                            <Input
-                                label="gender"
-                                placeholder="gender"
-                                value={gender}
-                                type="text"
-                                onChange={(e) => setgender(e.target.value)}
-                            />
+                        <Col md={6}><Form.Group controlId="exampleForm.SelectCustomSizeMd">
+                            <Form.Label>Gender</Form.Label>
+                            <Form.Control as="select" size="lg" value={gender} onChange={(e) => setgender(e.target.value)} custom>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </Form.Control>
+                        </Form.Group>
                             <Input
                                 label="dateOfBirth"
                                 placeholder="dateOfBirth"
@@ -118,7 +115,7 @@ const Signup = (props) => {
                         </Col>
                         <Button variant="primary" type="submit">
                             Submit
-              </Button>
+                        </Button>
                     </Form>
                 </Col>
             </Row>
