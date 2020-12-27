@@ -29,13 +29,21 @@ const userSchema = new mongoose.Schema({
     },
     gender: {
         type: String,
-        enum: ['Male', 'Female', 'Other'],
+        enum: ['Male', 'Female', 'Other', 'Not Available', 'male'],
     },
     dateOfBirth: {
         type: String,
         required: true,
         trim: true,
     },
+    profilePicture: {
+        type: String
+    },
+    type : {
+        type : String,
+        enum: ['App', 'Google', 'Facebook'],
+    }
+
 }, { timestamps: true });
 
 

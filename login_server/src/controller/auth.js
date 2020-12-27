@@ -16,7 +16,8 @@ exports.signup = (req, res) => {
     _user.hash_password = req.body.password;
     _user.gender = req.body.gender;
     _user.dateOfBirth = new Date(req.body.dateOfBirth+"Z");
-   
+    _user.profilePicture = req.body.profilePicture;
+    _user.type = req.body.type;
     _user.save((error, data) => {
         if (error) {
             console.log(error);
@@ -26,8 +27,10 @@ exports.signup = (req, res) => {
         }
 
         if (data) {
+          console.log(req.file);
             return res.status(201).json({
-                message: 'User created Successfully..!',
+                message: req.file,
+                
                 
                 
             })
@@ -44,10 +47,10 @@ exports.signin = (req, res) => {
         const token = jwt.sign({_id: user._id }, process.env.JWT_SECRET, { 
           expiresIn: "1d",
         });
-        const { _id, firstName, lastName, email, gender , dateOfBirth } = user;
+        const { _id, firstName, lastName, email, gender , dateOfBirth , profilePicture ,type} = user;
         res.status(200).json({
           token,
-          user: { _id, firstName, lastName, email, gender , dateOfBirth},
+          user: { _id, firstName, lastName, email, gender , dateOfBirth , profilePicture,type},
         });
       } else {
         return res.status(400).json({
