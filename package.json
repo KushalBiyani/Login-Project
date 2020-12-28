@@ -6,7 +6,7 @@
   "scripts": {
     "client": "cd login_client && npm start",
     "server": "cd login_server && npm start",
-    "start":  "node ./logi_server/src/index.js"
+    "start":  "node ./login_server/src/index.js"
   },
   "author": "kushal",
   "license": "ISC",
