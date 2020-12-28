@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "heroku-postbuild": "cd login_client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "author": "Kushal biyani",
   "license": "ISC",
