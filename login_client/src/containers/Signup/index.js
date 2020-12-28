@@ -36,6 +36,7 @@ const Signup = (props) => {
       gender,
       dateOfBirth,
       type: "App",
+      profilePicture:"https://www.seekpng.com/png/small/413-4139803_unknown-profile-profile-picture-unknown.png"
     };
     dispatch(signup(user));
   };
