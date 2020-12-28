@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { signup, login } from "../../actions";
+import { signup , login} from "../../actions";
 import { Redirect } from "react-router-dom";
 import { useGoogleLogin } from "react-google-login";
 
@@ -9,7 +9,7 @@ import { useGoogleLogin } from "react-google-login";
 import { refreshTokenSetup } from "../../helpers/refreshToken";
 
 const clientId =
-  "1082435044632-sopncjtmcio3b7gin0fiam1vivhp7lab.apps.googleusercontent.com";
+  "1082435044632-m9b363khca741namqa4sec0sevs0j63t.apps.googleusercontent.com";
 
 function GoogleLogin() {
   const dispatch = useDispatch();

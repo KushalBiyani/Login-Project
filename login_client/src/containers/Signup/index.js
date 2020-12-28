@@ -84,7 +84,7 @@ const Signup = (props) => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 placeholder="Password"
                 value={password}
@@ -128,7 +128,7 @@ const Signup = (props) => {
             </div>
             <div className="p-3 d-flex flex-row justify-content-center align-items-center member">
               <span>Already a member? </span>{" "}
-              <a href="/" className="text-decoration-none ml-2">
+              <a href="/signin" className="text-decoration-none ml-2">
                 SIGN IN
               </a>{" "}
             </div>

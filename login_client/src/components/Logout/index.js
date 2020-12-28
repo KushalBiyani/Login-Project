@@ -2,8 +2,9 @@ import React from 'react';
 import { useDispatch } from "react-redux";
 import { useGoogleLogout } from 'react-google-login';
 import { signout } from "../../actions";
+import "./styles.css";
 const clientId =
-  '1082435044632-sopncjtmcio3b7gin0fiam1vivhp7lab.apps.googleusercontent.com';
+  '1082435044632-m9b363khca741namqa4sec0sevs0j63t.apps.googleusercontent.com';
 
 function GoogleLogout() {
   const dispatch = useDispatch();
@@ -24,9 +25,7 @@ function GoogleLogout() {
   });
 
   return (
-    <button onClick={signOut}>
-      Log Out
-    </button>
+    <button onClick={signOut} className="btn btn-primary">Log Out </button>
   );
 }
 
