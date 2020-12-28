@@ -128,7 +128,7 @@ const Signup = (props) => {
             </div>
             <div className="p-3 d-flex flex-row justify-content-center align-items-center member">
               <span>Already a member? </span>{" "}
-              <a href="/signin" className="text-decoration-none ml-2">
+              <a href="/" className="text-decoration-none ml-2">
                 SIGN IN
               </a>{" "}
             </div>

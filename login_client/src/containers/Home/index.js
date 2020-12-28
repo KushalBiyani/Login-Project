@@ -19,14 +19,14 @@ const Home = (props) => {
      Log = <div className="btn btn-primary"><GoogleLogout/></div>;
   }
     else   {
-     Log = <button onClick={logout} className="btn btn-primary">Log Out </button>;
+     Log = <button onClick={logout} className="btn btn-primary"><a href = "/signup">Log Out</a> </button>;
   }
   var Name = ""; 
   if (type === "Facebook") {
     Name = token.firstName;
   }
     else   {
-      Name = token.firstName + token.lastName;
+      Name = token.firstName +" "+ token.lastName;
   }
 
   
